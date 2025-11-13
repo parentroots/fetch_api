@@ -1,1 +1,19 @@
 # fetch_api
+
+//*****************************if api have no data_KEY
+
+List<dynamic> jsonData = jsonDecode(response.body);
+setState(() {
+  products = jsonData.map((e) => Product.fromJson(e)).toList();
+});
+
+
+//*****************************if api have data_KEY
+
+
+Map<String, dynamic> jsonResponse = jsonDecode(response.body);
+List<dynamic> jsonData = jsonResponse['data'];
+
+setState(() {
+  products = jsonData.map((e) => Product.fromJson(e)).toList();
+});
