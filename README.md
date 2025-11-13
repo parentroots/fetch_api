@@ -17,3 +17,43 @@ List<dynamic> jsonData = jsonResponse['data'];
 setState(() {
   products = jsonData.map((e) => Product.fromJson(e)).toList();
 });
+
+
+
+
+
+
+
+
+
+
+List<dynamic> jsonData = jsonDecode(response.body);
+
+List<Product> tempProducts = [];
+
+for (var item in jsonData) {
+  tempProducts.add(Product.fromJson(item));
+}
+
+setState(() {
+  products = tempProducts;
+});
+
+
+
+
+
+
+
+Map<String, dynamic> jsonResponse = jsonDecode(response.body);
+List<dynamic> jsonData = jsonResponse['data'];
+
+List<Product> tempProducts = [];
+
+for (var item in jsonData) {
+  tempProducts.add(Product.fromJson(item));
+}
+
+setState(() {
+  products = tempProducts;
+});
