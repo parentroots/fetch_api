@@ -27,6 +27,8 @@ setState(() {
 
 
 
+
+
 List<dynamic> jsonData = jsonDecode(response.body);
 
 List<Product> tempProducts = [];
@@ -57,3 +59,4 @@ for (var item in jsonData) {
 setState(() {
   products = tempProducts;
 });
+
